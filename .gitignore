@@ -1,0 +1,4 @@
+/node_modules
+/extension/frd/newtab/*
+/extension/frd/popup/*
+/dist/*
