@@ -8,15 +8,13 @@ const BackgroundImage = () => {
     const [image, setImage] = useState("");
     const [classes, setClasses] = useState("background");
 
-    const unsplash = createApi({
-        accessKey: '9EvNtOEpAgc1giXWCzkHj2w5H3HDTnVcVfEjXQS6CH8',
-        fetch: nodeFetch,
-    });
-
-    const cookies = new Cookies();
-
     useEffect(() => {
+        const unsplash = createApi({
+            accessKey: '9EvNtOEpAgc1giXWCzkHj2w5H3HDTnVcVfEjXQS6CH8',
+            fetch: nodeFetch,
+        });
 
+        const cookies = new Cookies();
         const imageUrl = cookies.get("currentImage");
 
         if(!imageUrl && image === "") {
@@ -51,7 +49,7 @@ const BackgroundImage = () => {
             }, 500)
         }
 
-    });
+    }, [image]);
 
     return (
         <div
