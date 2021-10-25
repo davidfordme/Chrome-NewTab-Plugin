@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "FRD Homepage Plugin",
+  "description": "This extension is a homepage for FRD",
+  "version": "1.1",
+
+  "default_locale" : "en",
+  "icons" : {
+    "19" : "icons/19.png",
+    "48" : "icons/48.png",
+    "128" : "icons/128.png",
+    "1000" : "icons/1000.png"
+  },
+
+  "chrome_url_overrides": {
+    "newtab": "newtab/index.html"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/19.png",
+    "default_popup": "popup/index.html"
+  },
+
+  "permissions": [
+    "storage",
+    "tabs"
+  ]
+}

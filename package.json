@@ -1,0 +1,38 @@
+{
+  "name": "welcome-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-newtab": "parcel newtab/index.html",
+    "dev-popup": "parcel popup/index.html",
+    "build-newtab": "parcel build --public-url ./ newtab/index.html -d extension/frd/newtab",
+    "build-popup": "parcel build --public-url ./ popup/index.html -d extension/frd/popup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^2.2.1",
+    "sass": "^1.37.5"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "universal-cookie": "^4.0.4",
+    "unsplash-js": "^7.0.15"
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
+}

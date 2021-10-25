@@ -1,0 +1,47 @@
+@use "sass:math";
+
+.visit-bar {
+    $height: 50px;
+
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    height: $height;
+    width: 450px;
+    max-width: 80%;
+    border-radius: math.div($height, 2);
+    background: linear-gradient(180deg, #FFF 0%, #EEE 100%);
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+
+    $g_size: 30px;
+
+    &:after {
+        content: ' ';
+        position: absolute;
+        top: math.div($height - $g_size, 2);
+        right: math.div($height - $g_size, 2);
+        width: $g_size;
+        height: $g_size;
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    input {
+        width: calc(100% - #{$height + $g_size});
+        height: 100%;
+        padding: 0 math.div($g_size + $g_size + $height, 2) 0 math.div($height, 2);
+        line-height: $height;
+        font-size: 18px;
+        border: none;
+        border-radius: math.div($height, 2);
+        font-family: 'Kanit', sans-serif;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
