@@ -2,3 +2,4 @@
 /extension/frd/newtab/*
 /extension/frd/popup/*
 /dist/*
+.cache
