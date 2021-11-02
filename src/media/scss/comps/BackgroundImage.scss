@@ -6,21 +6,17 @@
     height: 100%;
     background-color: black;
 
-    .image {
-        background-position: center;
-        background-size: cover;
+    img {
         opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
+        object-fit: cover;
         transition: opacity 1s;
         -webkit-transition: opacity 1s;
     }
 
     &.ready {
-        .image {
+        img {
             opacity: 1;
         }
     }

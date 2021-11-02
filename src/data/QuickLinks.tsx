@@ -1,4 +1,8 @@
-const quickLinks = {
+type quickLinks = {
+    [key: string] : string
+}
+
+export const QuickLinks: quickLinks = {
     //Every day
     "bbc"                  : "https://www.bbc.co.uk/news",
     "thing"                : "https://www.thingiverse.com",
@@ -63,5 +67,3 @@ const quickLinks = {
     "10m"                  : "https://local.10motives.com",
     "10m live"             : "https://www.10motives.com",
 };
-
-export default quickLinks;
