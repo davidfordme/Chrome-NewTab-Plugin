@@ -1,6 +1,6 @@
 {
   "name": "frd-new-tab-plugin",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
@@ -17,11 +17,7 @@
   },
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build --public-url ./ src/index.html -d extension/newtab",
-    "start": "react-scripts start",
-    "build-old": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "parcel build --public-url ./ src/index.html -d extension/newtab"
   },
   "eslintConfig": {
     "extends": [
