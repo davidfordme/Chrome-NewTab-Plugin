@@ -6,6 +6,18 @@
     height: 100%;
     background-color: black;
 
+    .downloadBtn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 4rem;
+        height: 4rem;
+        font-size: 0;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     img {
         opacity: 0;
         width: 100%;
