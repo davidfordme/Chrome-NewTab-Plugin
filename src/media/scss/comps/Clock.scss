@@ -4,58 +4,56 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    $clock_fontSize: 120px;
-    $clock_padding: 20px;
+    $clock_fontSize: 100px;
 
     $calendar_top: 20px;
 
     .time {
-        $opacity: 0.9;
+        $opacity: 1;
+        $blockWidth: 190px;
+        $blockHeight: 140px;
+        $blockMargin: 10px;
 
-        h1, h2 {
+        width: ($blockWidth * 3) + ($blockMargin * 6);
+        height: $blockHeight;
+        position: relative;
+
+        .base {
+            position: absolute;
             display: block;
             overflow: hidden;
-            height: 50%;
             margin: 0;
             padding: 0;
             opacity: 1;
             font-weight: 900;
+            top: 0;
+            left: 0;
+            height: calc(50% - 1px);
+            width: ($blockWidth * 3) + ($blockMargin * 6);
+
+            &.bottom {
+                top: auto;
+                bottom: 0;
+
+                span {
+                    top: - 100%;
+                }
+            }
 
             span {
+                position: relative;
                 display: inline-block;
                 background: rgb(0,0,0);
                 background: linear-gradient(180deg, rgba(25,25,25,$opacity) 0%, rgba(35,35,35,$opacity) 25%, rgba(50,50,50,$opacity) 50%);
-                border-radius: $clock_padding;
-                padding: $clock_padding;
-                margin: 10px;
+                border-radius: 20px;
+                margin: 0 $blockMargin;
                 color: #FFF;
                 font-size: $clock_fontSize;
-                line-height: $clock_fontSize;
+                line-height: $blockHeight;
                 text-shadow: 10px 10px 10px rgba(0,0,0,0.3);
-                box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
-                width: 150px;
+                width: $blockWidth;
+                height: $blockHeight;
                 text-align: center;
-            }
-        }
-
-        h1 {
-            visibility: hidden;
-        }
-
-        h2 {
-            position: absolute;
-            top: 0;
-
-
-            height: calc(50% - #{$calendar_top + 1px});
-
-            &:last-child {
-                top: calc(50% - #{$calendar_top - 1px});
-
-                span {
-                    transform: translateY(calc(-50% - 11px));
-                    background: linear-gradient(180deg, rgba(25,25,25,$opacity) 50%, rgba(35,35,35,$opacity) 75%, rgba(50,50,50,$opacity) 100%);
-                }
             }
         }
     }
@@ -67,5 +65,32 @@
         margin-top: 20px;
         line-height: 20px;
         font-size: 25px;
+    }
+}
+
+@keyframes flipDownTop {
+    0% {
+        transform: rotateX(1deg);
+    }
+    25% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(90deg);
+    }
+}
+
+@keyframes flipDownBottom {
+    0% {
+        transform: rotateX(90deg);
+    }
+    25% {
+        transform: rotateX(90deg);
+    }
+    50% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(0deg);
     }
 }
