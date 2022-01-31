@@ -36,8 +36,4 @@ const DownloadButton = styled.a`
     }
 `;
 
-export const bis = {
-    Background: Background,
-    Image : Image,
-    DownloadButton: DownloadButton
-};
+export { Background, Image, DownloadButton };

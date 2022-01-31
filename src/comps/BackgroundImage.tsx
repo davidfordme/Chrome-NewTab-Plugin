@@ -3,7 +3,7 @@ import React, { useState, useEffect, MouseEvent } from "react";
 import { createApi } from 'unsplash-js';
 import Cookies from "universal-cookie";
 
-import { bis } from "../media/styled/comps/BackgroundImage";
+import * as Styled from "../media/styled/comps/BackgroundImage";
 interface Image {
     url : string,
     download : string,
@@ -83,24 +83,24 @@ export default function BackgroundImage() {
     });
 
     return (
-        <bis.Background
+        <Styled.Background
             className={`background${ isReady ? ' ready' : ''}`}>
             { image.download ? (
-                <bis.DownloadButton
+                <Styled.DownloadButton
                     onClick={ downloadImage }
                     className="downloadBtn"
                     title={ image.title }
                     href={ image.download }
                 >
                     Download Image
-                </bis.DownloadButton>
+                </Styled.DownloadButton>
             ) : '' }
-            <bis.Image
+            <Styled.Image
                 className="image"
                 src={ image.url !== '' ? image.url : ""}
                 alt="Background"
                 onLoad={ imageLoaded }
             />
-        </bis.Background>
+        </Styled.Background>
     )
 }

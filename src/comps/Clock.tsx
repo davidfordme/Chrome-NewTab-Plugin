@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "../media/scss/comps/clock"
-
+import * as Styled from "../media/styled/comps/Clock";
 interface Time {
     hours: string,
     minutes: string,
@@ -53,27 +52,27 @@ export default function Clock() {
     }, [time]);
 
     return (
-        <div className="clock">
-            <div className="time">
-                <h1>
-                    <span>{ time.hours }</span>
-                    <span>{ time.minutes }</span>
-                    <span>{ time.seconds }</span>
-                </h1>
-                <h2>
-                    <span>{ time.hours }</span>
-                    <span>{ time.minutes }</span>
-                    <span>{ time.seconds }</span>
-                </h2>
-                <h2>
-                    <span>{ time.hours }</span>
-                    <span>{ time.minutes }</span>
-                    <span>{ time.seconds }</span>
-                </h2>
+        <Styled.Clock>
+            <div>
+                <Styled.TimeOne>
+                    <Styled.Span>{ time.hours }</Styled.Span>
+                    <Styled.Span>{ time.minutes }</Styled.Span>
+                    <Styled.Span>{ time.seconds }</Styled.Span>
+                </Styled.TimeOne>
+                <Styled.TimeTwo>
+                    <Styled.Span>{ time.hours }</Styled.Span>
+                    <Styled.Span>{ time.minutes }</Styled.Span>
+                    <Styled.Span>{ time.seconds }</Styled.Span>
+                </Styled.TimeTwo>
+                <Styled.TimeTwo>
+                    <Styled.Span>{ time.hours }</Styled.Span>
+                    <Styled.Span>{ time.minutes }</Styled.Span>
+                    <Styled.Span>{ time.seconds }</Styled.Span>
+                </Styled.TimeTwo>
             </div>
-            <div className="calendar">
+            <Styled.Calendar>
                 { date.param }
-            </div>
-        </div>
+            </Styled.Calendar>
+        </Styled.Clock>
     )
 }

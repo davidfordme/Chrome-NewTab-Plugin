@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 
-import "../media/scss/comps/VisitBar"
+import * as Styled from "../media/styled/comps/VisitBar";
+
 import { QuickLinks } from "../data/QuickLinks";
 
 export default function VisitBar() {
@@ -28,12 +29,12 @@ export default function VisitBar() {
     })
 
     return (
-        <form
+        <Styled.Form
             action="https://www.google.com/search"
             id="visit-bar"
             className="visit-bar"
             onSubmit={ handleSubmit }>
-            <input
+            <Styled.Input
                 className="gcse-searchbox"
                 name="q"
                 placeholder="Google me"
@@ -41,6 +42,6 @@ export default function VisitBar() {
                 onChange={ handleChange }
                 ref={ search }
             />
-        </form>
+        </Styled.Form>
     )
 }
