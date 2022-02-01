@@ -1,10 +1,10 @@
 import React from 'react';
 
-import "./media/scss/App"
-
 import VisitBar from "./comps/VisitBar";
 import Clock from "./comps/Clock";
 import BackgroundImage from "./comps/BackgroundImage";
+
+import { GlobalStyle } from './media/styled/App';
 
 export default function App() {
   return (
@@ -12,6 +12,7 @@ export default function App() {
       <VisitBar />
       <BackgroundImage />
       <Clock />
+      <GlobalStyle />
     </>
   );
 };
