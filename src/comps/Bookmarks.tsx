@@ -23,13 +23,11 @@ export default function Bookmarks() {
 
     const currentTab = (url : string) => {
         chrome.tabs.update({url: url});
-        //window.close();
     }
 
     return (
         <Styled.Bookmarks className={ (bookmarksBar.length > 0) ? "in" : "" }>
             { bookmarksBar.map(element => {
-                    console.log(element)
                     return (
                         <a href={ element.url } onClick={ () => currentTab(element.url) } title={ element.title }>
                             <img alt={ element.title } src={ `https://s2.googleusercontent.com/s2/favicons?domain=` + element.url } />{ element.title }
