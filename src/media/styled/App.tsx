@@ -64,6 +64,7 @@ body {
     padding: 0;
     font-family: 'Kanit', sans-serif;
     font-weight: 100;
+    font-size: 12px !important;
 }
 `;
 

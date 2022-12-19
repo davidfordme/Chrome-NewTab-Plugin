@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import * as Styled from "../media/styled/comps/Bookmarks";
+import { BookmarksExample } from "../data/BookmarksExample"
 
 export default function Bookmarks() {
+
+    const devMode = true;
     
     const [bookmarksBar, setBookmarksBar] = useState([]);
 
@@ -11,6 +14,7 @@ export default function Bookmarks() {
 
             allBookmarks.forEach(category => {
                 if(category.title === 'Bookmarks bar' && category.children.length > 0) {
+                    console.log(category.children)
                     setBookmarksBar(category.children)
                 }
             });
@@ -18,7 +22,8 @@ export default function Bookmarks() {
     }
 
     useEffect(() => {
-        chrome.bookmarks.getTree(parseBookmarks);
+        if(devMode) setBookmarksBar(BookmarksExample)
+        else chrome.bookmarks.getTree(parseBookmarks)
     }, [])
 
     const currentTab = (url : string) => {

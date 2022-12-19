@@ -21,7 +21,11 @@ const Bookmarks = styled.div`
         color: #FFF;
         text-decoration: none;
         font-weight: 400;
-
+        max-width: 100px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        
         img {
             height: 14px;
             width: 14px;
